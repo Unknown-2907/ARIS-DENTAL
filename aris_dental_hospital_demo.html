@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIS Dental Hospital — by Dr. Sagar Anand</title>
+<meta name="description" content="ARIS Dental Hospital — a modern, patient-focused dental care experience by Dr. Sagar Anand.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --ink:#102b2b;
+  --muted:#607271;
+  --cream:#f7f8f4;
+  --white:#fff;
+  --line:#dce5e2;
+  --accent:#79aaa0;
+  --accent-dark:#3e716a;
+  --soft:#e8f0ed;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(16,43,43,.09)}
+.brand{font-weight:600;letter-spacing:.12em;font-size:14px}
+.brand span{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--muted);margin-top:1px}
+.navlinks{display:flex;gap:30px;font-size:13px;color:#49605e}
+.navlinks a:hover{color:var(--ink)}
+.navbtn{border:1px solid var(--ink);padding:11px 18px;border-radius:30px;font-size:12px;font-weight:600}
+
+.hero{min-height:680px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:60px;padding:72px 0}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:22px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(54px,6.3vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:500;max-width:720px}
+.hero p{font-size:17px;color:var(--muted);max-width:520px;margin:28px 0 34px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 21px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:.02em}
+.primary{background:var(--ink);color:white}
+.secondary{border:1px solid #b9c9c5;background:transparent}
+.hero-card{height:520px;border-radius:28px;overflow:hidden;position:relative;background:
+radial-gradient(circle at 62% 26%,rgba(255,255,255,.92) 0 8%,transparent 8.5%),
+radial-gradient(circle at 65% 29%,rgba(121,170,160,.5) 0 15%,transparent 15.5%),
+linear-gradient(145deg,#dce9e5,#91aaa4 45%,#294947)}
+.hero-card:after{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.35);border-radius:21px}
+.hero-note{position:absolute;left:28px;bottom:28px;background:rgba(255,255,255,.91);backdrop-filter:blur(10px);padding:17px 19px;border-radius:15px;z-index:2;font-size:12px}
+.hero-note strong{display:block;font-size:14px;margin-bottom:3px}
+
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;color:#536765;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.marquee .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.section{padding:110px 0}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:50px}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent-dark);font-weight:600;margin-bottom:12px}
+h2{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(42px,5vw,64px);line-height:1.03;letter-spacing:-.035em}
+.section-head p{max-width:410px;color:var(--muted);font-size:15px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;min-height:210px;transition:.25s}
+.service:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(16,43,43,.08)}
+.num{font-size:11px;color:var(--accent-dark);letter-spacing:.1em}
+.service h3{font-family:"Playfair Display",serif;font-size:27px;font-weight:500;margin:38px 0 9px}
+.service p{font-size:13px;color:var(--muted)}
+
+.doctor{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.portrait{height:500px;border-radius:26px;background:
+radial-gradient(ellipse at 50% 30%,#e9f0ed 0 18%,transparent 18.5%),
+linear-gradient(145deg,#d5e2df,#708f89 55%,#243f3d);position:relative;overflow:hidden}
+.portrait:before{content:"DR";position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font-family:"Playfair Display";font-size:150px;color:rgba(255,255,255,.13)}
+.doctor-copy p{color:var(--muted);font-size:16px;max-width:590px;margin:24px 0}
+.signature{font-family:"Playfair Display",serif;font-size:25px;margin-top:30px}
+
+.experience{background:var(--ink);color:white}
+.experience .kicker{color:#9fc5bd}
+.experience p{color:#b7c8c5}
+.experience-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.exp-main,.exp-side{border-radius:24px;overflow:hidden;min-height:420px;position:relative}
+.exp-main{background:linear-gradient(135deg,#7ca39b,#1d3c3a)}
+.exp-side{background:linear-gradient(135deg,#d8e5e1,#718f8a)}
+.exp-label{position:absolute;left:28px;bottom:26px}
+.exp-label small{letter-spacing:.14em;text-transform:uppercase;font-size:10px;opacity:.8}
+.exp-label h3{font-family:"Playfair Display";font-size:34px;font-weight:500}
+
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.quote{background:white;border:1px solid var(--line);padding:30px;border-radius:20px}
+.quote p{font-family:"Playfair Display",serif;font-size:21px;line-height:1.35}
+.quote small{display:block;color:var(--muted);margin-top:22px}
+
+.cta{padding:90px 0}
+.ctabox{background:var(--soft);border:1px solid #d2e1dc;border-radius:28px;padding:65px;display:flex;justify-content:space-between;align-items:end;gap:30px}
+.ctabox p{color:var(--muted);max-width:460px;margin-top:15px}
+
+footer{border-top:1px solid var(--line);padding:35px 0 50px;color:#627472;font-size:12px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+.footer-grid strong{color:var(--ink);display:block;margin-bottom:8px}
+.copyright{margin-top:45px;padding-top:20px;border-top:1px solid var(--line)}
+
+@media(max-width:850px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr;padding:52px 0}.hero-card{height:400px}
+ .section{padding:75px 0}.section-head{display:block}.section-head p{margin-top:18px}
+ .services,.trust{grid-template-columns:1fr}.doctor,.experience-grid{grid-template-columns:1fr}.portrait{height:390px}
+ .ctabox{padding:38px;display:block}.ctabox .btn{display:inline-block;margin-top:25px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ h1{font-size:52px}.hero p{font-size:15px}.hero-card{height:350px}
+ .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="container">
+<nav>
+  <a class="brand" href="#">ARIS DENTAL HOSPITAL<span>BY DR. SAGAR ANAND</span></a>
+  <div class="navlinks">
+    <a href="#treatments">Treatments</a>
+    <a href="#doctor">Doctor</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="navbtn" href="#contact">Book a Visit</a>
+</nav>
+</header>
+
+<main>
+<section class="container hero">
+  <div>
+    <div class="eyebrow">ARIS DENTAL HOSPITAL · PATNA</div>
+    <h1>A better smile begins with better care.</h1>
+    <p>A modern, patient-focused approach to dentistry — designed around precision, comfort and confidence.</p>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Book an Appointment</a>
+      <a class="btn secondary" href="#treatments">Explore Treatments</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-note"><strong>Care that feels personal.</strong>Thoughtful dentistry, from consultation to treatment.</div>
+  </div>
+</section>
+
+<div class="marquee"><div class="container">
+  <span>Precision</span><span>Comfort</span><span>Personalised Care</span><span>Modern Dentistry</span><span>Patient First</span>
+</div></div>
+
+<section class="container section" id="treatments">
+  <div class="section-head">
+    <div><div class="kicker">01 — Treatments</div><h2>Complete care.<br>One trusted place.</h2></div>
+    <p>From everyday dental care to smile-focused treatments, every visit is approached with clarity, care and attention to detail.</p>
+  </div>
+  <div class="services">
+    <article class="service"><span class="num">01</span><h3>General Dentistry</h3><p>Preventive and restorative care designed to keep your oral health on track.</p></article>
+    <article class="service"><span class="num">02</span><h3>Root Canal Care</h3><p>Focused treatment with an emphasis on comfort and preserving your natural tooth.</p></article>
+    <article class="service"><span class="num">03</span><h3>Dental Implants</h3><p>Modern tooth-replacement solutions planned around individual needs.</p></article>
+    <article class="service"><span class="num">04</span><h3>Braces & Aligners</h3><p>Smile-alignment options for a healthier, more confident smile.</p></article>
+    <article class="service"><span class="num">05</span><h3>Cosmetic Dentistry</h3><p>Smile-enhancing treatments with a natural, balanced result in mind.</p></article>
+    <article class="service"><span class="num">06</span><h3>Teeth Whitening</h3><p>A brighter smile through professionally guided whitening care.</p></article>
+  </div>
+</section>
+
+<section class="container section" id="doctor">
+  <div class="doctor">
+    <div class="portrait"></div>
+    <div class="doctor-copy">
+      <div class="kicker">02 — The Doctor</div>
+      <h2>Care led by<br>Dr. Sagar Anand.</h2>
+      <p>At ARIS Dental Hospital, every treatment begins with understanding the patient. The goal is simple: clear guidance, thoughtful care and a treatment experience that puts comfort at the centre.</p>
+      <p>This section is intentionally ready for Dr. Sagar Anand's verified qualifications, experience and professional photograph to be added.</p>
+      <div class="signature">Dr. Sagar Anand</div>
+    </div>
+  </div>
+</section>
+
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">03 — The Experience</div><h2>A calmer way<br>to visit the dentist.</h2></div>
+      <p>Clean, considered and patient-focused — every detail should make the experience feel reassuring from the moment you arrive.</p>
+    </div>
+    <div class="experience-grid">
+      <div class="exp-main"><div class="exp-label"><small>ARIS Dental Hospital</small><h3>Precision meets comfort.</h3></div></div>
+      <div class="exp-side"><div class="exp-label" style="color:#173533"><small>Patient first</small><h3>Clarity at every step.</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-head">
+    <div><div class="kicker">04 — Patient Trust</div><h2>Because good care<br>should feel reassuring.</h2></div>
+    <p>Actual patient reviews can be placed here once approved, giving the clinic's existing reputation a prominent place on the website.</p>
+  </div>
+  <div class="trust">
+    <div class="quote"><p>“A clean, calm and genuinely patient-first experience.”</p><small>Sample testimonial — replace with verified review</small></div>
+    <div class="quote"><p>“Clear communication made the entire treatment process easier.”</p><small>Sample testimonial — replace with verified review</small></div>
+    <div class="quote"><p>“Professional care with a personal touch.”</p><small>Sample testimonial — replace with verified review</small></div>
+  </div>
+</section>
+
+<section class="container cta" id="contact">
+  <div class="ctabox">
+    <div>
+      <div class="kicker">05 — Your Visit</div>
+      <h2>Ready to care<br>for your smile?</h2>
+      <p>Book a consultation at ARIS Dental Hospital and take the next step towards a healthier, more confident smile.</p>
+    </div>
+    <a class="btn primary" href="tel:+919955974737">Call ARIS Dental Hospital</a>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div><strong>ARIS DENTAL HOSPITAL</strong>By Dr. Sagar Anand</div>
+    <div><strong>Visit</strong>Saketpuri, Bazar Samiti<br>Bahadurpur, Patna, Bihar</div>
+    <div><strong>Contact</strong>+91 99559 74737<br>Appointments by phone</div>
+  </div>
+  <div class="copyright">© 2026 ARIS Dental Hospital · Demo concept by ĀKAAR STUDIOS</div>
+</div>
+</footer>
+</body>
+</html>
